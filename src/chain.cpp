@@ -57,7 +57,8 @@ std::size_t BlockChain::get_previous_hash()
   if (this->chain.size() == 0)
     return 0;
 
-  return (*this->chain.end())->get_previous_hash();
+  //return this->chain.back()->get_previous_hash();
+  return this->chain.back()->get_this_hash();
 }
 
 
