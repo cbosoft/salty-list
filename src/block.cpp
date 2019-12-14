@@ -39,3 +39,12 @@ std::string Block::get_payload() const { return this->payload; }
     << "}" << std::endl
     ;
 }
+
+
+std::size_t Block::get_this_hash() const 
+{
+  std::size_t hash_payload = std::hash<std::string>{}(this->payload);
+  std::size_t hash_proof = std::hash<std::size_t>{}(this->proof);
+  std::size_t hash_timestamp = std::hash<std::size_t>{}(this->timestamp);
+  return ((hash_payload ^ (hash_proof << 1)) ^ (this->previous_hash << 1)) ^ (hash_timestamp << 1);
+};
