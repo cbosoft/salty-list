@@ -23,5 +23,6 @@ class BlockChain {
 
     void save_to_file();
     void print();
+    void write();
 
 };
