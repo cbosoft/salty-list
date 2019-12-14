@@ -66,12 +66,12 @@ std::size_t BlockChain::get_previous_hash()
 
 bool BlockChain::validate(std::size_t prev, std::size_t cur)
 {
-  std::stringstream ss;
+  std::stringstream ss("");
   ss << prev << cur;
-  std::string concat;
+  std::string concat = ss.str();
 
   std::size_t hash = std::hash<std::string>{}(concat);
-  return hash % 10000 == 0;
+  return hash % this->complexity == 0;
 }
 
 
