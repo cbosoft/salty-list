@@ -111,8 +111,14 @@ void BlockChain::store(std::string payload)
 
 void BlockChain::print()
 {
-  for (auto block : this->chain) {
+  std::cout 
+    << "salty v" << this->version << std::endl
+    << "complexity: " << this->complexity << std::endl
+    << "stochastic solver: " << (this->stochastic?"yes":"no") << std::endl
+    ;
+  for (auto block : this->chain)
     block->print();
+}
 
 
 
@@ -140,3 +146,5 @@ void BlockChain::write()
 
   ostr << std::setw(2) << j;
 }
+
+
