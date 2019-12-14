@@ -18,10 +18,12 @@ class Block {
         std::time_t timestamp, 
         std::string payload);
 
-    void print();
     std::size_t get_index() const;
     std::size_t get_previous_hash() const;
     std::size_t get_proof() const;
     std::size_t get_timestamp() const;
     std::string get_payload() const;
+    
+
+    void print() const;
 };
