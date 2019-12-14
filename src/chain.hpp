@@ -12,6 +12,7 @@ class BlockChain {
     std::list<Block *> chain;
     std::string path;
 
+    bool stochastic;
   public:
     BlockChain(std::string path);
 

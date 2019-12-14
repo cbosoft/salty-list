@@ -2,6 +2,8 @@
 #include <iomanip>
 #include <iostream>
 #include <fstream>
+#include <random>
+
 #include <sys/stat.h>
 
 #include <nlohmann/json.hpp>
@@ -77,7 +79,11 @@ bool BlockChain::validate(std::size_t prev, std::size_t cur)
 std::size_t BlockChain::get_proof(std::size_t prev)
 {
   std::size_t guess = 0;
-  while (this->validate(prev, guess)) guess++;
+  while (not this->validate(prev, guess))
+    if (this->stochastic)
+      guess = rand();
+    else
+      guess++;
   return guess;
 }
 
