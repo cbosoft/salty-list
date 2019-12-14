@@ -4,6 +4,7 @@
 #include <string>
 #include <functional>
 
+#include "version.hpp"
 #include "block.hpp"
 
 class BlockChain {
@@ -13,6 +14,7 @@ class BlockChain {
     std::string path;
 
     bool stochastic;
+    std::size_t version;
   public:
     BlockChain(std::string path);
 
