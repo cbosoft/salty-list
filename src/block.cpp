@@ -16,10 +16,6 @@ Block::Block(std::size_t index,
 }
 
 
-std::size_t Block::get_previous_hash()
-{
-  return this->previous_hash;
-}
 
 
 std::size_t Block::get_index() const { return this->index; }

@@ -25,5 +25,6 @@ class Block {
     std::string get_payload() const;
     
 
+    std::size_t get_this_hash() const;
     void print() const;
 };
