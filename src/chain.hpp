@@ -14,7 +14,9 @@ class BlockChain {
     std::string path;
 
     bool stochastic;
+    std::size_t complexity;
     std::size_t version;
+
   public:
     BlockChain(std::string path);
 
