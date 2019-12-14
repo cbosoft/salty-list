@@ -90,10 +90,8 @@ std::size_t BlockChain::get_proof(std::size_t prev)
 
 
 
-void BlockChain::add_new_block(std::size_t proof, std::size_t prev, std::string payload)
+void BlockChain::add_new_block(std::size_t index, std::size_t prev, std::size_t proof, std::time_t timestamp, std::string payload)
 {
-  std::size_t index = this->chain.size();
-  std::time_t timestamp = std::time(NULL);
   Block *block = new Block(index, prev, proof, timestamp, payload);
   this->chain.push_back(block);
 }
@@ -102,9 +100,11 @@ void BlockChain::add_new_block(std::size_t proof, std::size_t prev, std::string 
 
 void BlockChain::store(std::string payload)
 {
+  std::size_t index = this->chain.size();
   std::size_t prev = this->get_previous_hash();
   std::size_t proof = this->get_proof(prev);
-  this->add_new_block(proof, prev, payload);
+  std::time_t timestamp = std::time(NULL);
+  this->add_new_block(index, prev, proof, timestamp, payload);
 }
 
 
