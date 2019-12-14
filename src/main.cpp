@@ -1,10 +1,15 @@
 #include <iostream>
 
-#include "salty_list.hpp"
+#include "chain.hpp"
 
 
 int main(void)
 {
-  SaltyList sl("path");
-  std::cout << sl.get_latest_hash() << std::endl;
+  BlockChain chain("path");
+
+  chain.store("hello_world");
+  chain.store("hello_world");
+  chain.store("hello_world");
+  chain.store("hello_world");
+
 }
