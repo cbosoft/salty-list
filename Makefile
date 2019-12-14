@@ -1,7 +1,8 @@
 CXX = g++
 CFLAGS = -g -Wall -Wextra
 OBJ = \
-			obj/salty_list.o
+			obj/chain.o \
+			obj/block.o
 LINK = 
 
 obj/%.o: src/%.cpp
